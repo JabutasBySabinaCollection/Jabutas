@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Jabutas · Tas Ulos Handmade</title>
+    <!-- Font Awesome & Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<nav class="navbar">
+    <div class="logo"><img src="LogoJabutas.png" alt="Jabutas Logo" class="logo-img"></div>
+    <ul class="nav-menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#tentang">Filosofi Ulos</a></li>
+        <li><a href="#toko">Tentang Toko</a></li>
+        <li><a href="#visimisi">Visi & Misi</a></li>
+        <li><a href="#rating">Testimoni</a></li>
+        <li><a href="#layani">Siap Melayani</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <div class="nav-icons">
+        <div class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></div>
+        <div class="cart-icon" id="cartIcon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></div>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+</nav>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-header"><h2>Keranjang</h2><button class="close-cart" id="closeCartBtn">&times;</button></div>
+    <ul class="cart-items" id="cartItemsList"></ul>
+    <div class="cart-total">Total: <span id="cartTotalPrice">Rp0</span></div>
+    <button class="btn-wa" id="whatsappOrderBtn" style="background:#25D366; width:100%; padding:1rem; border:none; border-radius:50px; margin-top:1rem; color:white;"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</button>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <span class="modal-close" id="closeModalBtn">&times;</span>
+        <div class="gallery-container">
+            <img id="modalImage" class="modal-img" src="" alt="produk">
+            <button class="gallery-nav gallery-prev" id="galleryPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="gallery-nav gallery-next" id="galleryNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+        <h3 id="modalName"></h3>
+        <div id="modalPriceContainer" style="margin: 0.5rem 0 0.2rem;"></div>
+        <p><i class="fas fa-tag"></i> Berkelas Tanpa Batas.</p>
+        <div class="quantity-selector">
+            <button class="qty-btn" id="qtyMinus"><i class="fas fa-minus"></i></button>
+            <input type="number" id="modalQty" value="1" min="1" readonly>
+            <button class="qty-btn" id="qtyPlus"><i class="fas fa-plus"></i></button>
+        </div>
+        <button class="btn" id="modalAddToCart" style="width:100%"><i class="fas fa-cart-plus"></i> Tambahkan ke Keranjang</button>
+        <div class="modal-marketplace">
+            <a href="#" target="_blank" class="market-icon" id="modalWa"><i class="fab fa-whatsapp"></i> WA</a>
+            <a href="#" target="_blank" class="market-icon" id="modalShopee"><i class="fab fa-shopee"></i> Shopee</a>
+            <a href="#" target="_blank" class="market-icon" id="modalTiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+    </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-bg-animation">
+        <div class="floating-shape shape1"></div><div class="floating-shape shape2"></div><div class="floating-shape shape3"></div><div class="floating-shape shape4"></div><div class="floating-shape shape5"></div>
+    </div>
+    <div class="hero-content fade-in visible">
+        <img src="LogoJabutas.png" alt="Jabutas Logo" class="hero-logo">
+        <div class="hero-subtitle">BY Sabina Collection</div>
+        <p>“Tenun Tak Terbatas.”</p>
+        <div>
+            <a href="#produk" class="btn"><i class="fas fa-eye"></i> Jelajahi Koleksi</a>
+            <a href="#tentang" class="btn btn-outline"><i class="fas fa-book-open"></i> Filosofi Ulos</a>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUK -->
+<section id="produk" class="section">
+    <h2 class="section-title fade-in">Koleksi Jabutas</h2>
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- FILOSOFI ULOS -->
+<section id="tentang" class="section">
+    <h2 class="section-title fade-in">Filosofi Kain Tenun</h2>
+    <div class="warisan-flex fade-in">
+        <div class="warisan-text ulos-heritage">
+            <h3>📜 Sejarah dan Filosofi Kain Tenun</h3>
+            <p>Ulos merupakan kain tenun tradisional yang berasal dari Suku Batak di Sumatera Utara yang memiliki nilai sejarah dan filosofi yang sangat dalam. Secara etimologis, kata “ulos” berarti kain yang digunakan untuk menyelimuti atau menghangatkan tubuh. Pada masa awal, ulos berfungsi sebagai pelindung dari suhu dingin di wilayah dataran tinggi sekitar Danau Toba. Dalam kehidupan masyarakat Batak dahulu, dikenal tiga sumber utama kehangatan, yaitu matahari, api, dan ulos. Namun karena matahari tidak selalu bersinar dan api tidak selalu tersedia, ulos menjadi sumber kehangatan yang paling dekat dengan manusia. Dari sinilah ulos berkembang dari sekadar kebutuhan fisik menjadi simbol yang sarat makna dalam kehidupan sosial dan spiritual.</p>
+            <p>Seiring perkembangan zaman, fungsi ulos meluas dan menjadi bagian penting dalam sistem adat Batak yang dikenal sebagai Dalihan Na Tolu, yaitu struktur kekerabatan yang mengatur hubungan antara hula-hula, dongan tubu, dan boru. Dalam setiap tahap kehidupan, ulos selalu hadir sebagai simbol yang mengikat hubungan tersebut. Pada peristiwa kelahiran, ulos diberikan sebagai doa agar bayi tumbuh sehat dan panjang umur. Dalam pernikahan, ulos menjadi lambang restu dan harapan akan kehidupan rumah tangga yang harmonis. Sementara dalam upacara kematian, ulos digunakan sebagai bentuk penghormatan terakhir sekaligus simbol perpisahan. Dengan demikian, ulos tidak hanya menjadi benda, tetapi juga media komunikasi nilai-nilai adat yang diwariskan secara turun-temurun.</p>
+            <p>Filosofi utama ulos terletak pada makna kehangatan, kasih sayang, dan perlindungan. Ulos tidak hanya menghangatkan tubuh secara fisik, tetapi juga melambangkan kehangatan batin berupa cinta, perhatian, dan dukungan dari keluarga maupun komunitas. Hal ini terlihat jelas dalam tradisi “mangulosi”, yaitu pemberian ulos kepada seseorang sebagai tanda berkat dan restu. Dalam praktiknya, mangulosi tidak dilakukan secara sembarangan, melainkan mengikuti aturan adat yang ketat, di mana pemberian ulos umumnya dilakukan oleh pihak yang memiliki kedudukan lebih tinggi kepada yang lebih rendah. Proses ini menegaskan bahwa ulos juga berfungsi sebagai simbol penghormatan dan keteraturan sosial dalam masyarakat Batak.</p>
+            <p>Selain itu, setiap jenis ulos memiliki makna filosofis yang berbeda, tergantung pada motif, warna, dan penggunaannya. Misalnya, Ulos Ragidup melambangkan kehidupan yang sejahtera dan kebahagiaan, Ulos Sibolang sering digunakan dalam suasana duka dan mencerminkan keteguhan hati, sementara Ulos Mangiring mengandung harapan akan kelangsungan keturunan. Motif seperti Bintang Maratur menggambarkan keteraturan dan keharmonisan dalam kehidupan keluarga. Warna-warna yang digunakan dalam ulos juga memiliki arti tersendiri, seperti merah yang melambangkan keberanian dan kekuatan, hitam yang mencerminkan kewibawaan dan keteguhan, serta putih yang melambangkan kesucian dan kejujuran.</p>
+            <p>Lebih dari itu, ulos juga memiliki nilai spiritual yang kuat. Dalam kepercayaan tradisional masyarakat Batak, ulos dipercaya mengandung doa dan energi positif dari pembuat serta pemberinya. Oleh karena itu, ulos sering dianggap sebagai simbol perlindungan dan berkat dalam kehidupan. Hingga saat ini, meskipun ulos telah berkembang menjadi bagian dari industri kreatif seperti fashion dan produk modern lainnya, nilai-nilai filosofis yang terkandung di dalamnya tetap menjadi inti yang tidak terpisahkan. Ulos bukan sekadar kain, melainkan representasi identitas budaya, media penyampai kasih, serta warisan leluhur yang terus hidup dan relevan di tengah perubahan zaman.</p>
+        </div>
+        <div class="warisan-image">
+            <img src="GambarUlos.jpg" alt="Tenun Ulos tradisional" loading="lazy">
+            <p style="margin-top: 10px; font-style:italic; color:var(--text-secondary);">Pengrajin Ulos Batak</p>
+        </div>
+    </div>
+</section>
+
+<!-- TENTANG TOKO -->
+<section id="toko" class="section">
+    <h2 class="section-title fade-in">Tentang Toko</h2>
+    <div class="warisan-flex fade-in">
+        <div class="warisan-text">
+            <h3>📜 Deskripsi Jabutas</h3>
+            <p>JABUTAS merupakan brand tas lokal Indonesia yang berfokus pada pengembangan produk berbasis kain-kain tradisional nusantara. Nama JABUTAS ini merupakan hasil rebranding dari Sabina Collection yang telah berdiri sejak 2018 dengan membawa visi menjadi brand tas lokal yang melestarikan kain tradisional agar melestarikan budaya indonesia. Melalui JABUTAS, kami mengajak masyarakat Indonesia untuk kembali mencintai dan menggunakan kain tradisional dalam kehidupan sehari-hari dengan cara yang lebih modern, stylish, dan berkelas.</p>
+            <p>Setiap produk Jabutas dibuat dengan penuh ketelitian oleh pengrajin lokal yang memahami keindahan dan makna di balik setiap helai ulos. Kami percaya bahwa tas bukan hanya aksesoris, tetapi juga medium untuk bercerita tentang budaya dan identitas bangsa.</p>
+        </div>
+        <div class="warisan-image">
+            <img src="toko.jpeg" alt="Suasana Toko Jabutas" loading="lazy">
+            <p style="margin-top: 10px; font-style:italic; color:var(--text-secondary);">TOKO Jabutas by Sabina Collection</p>
+        </div>
+    </div>
+</section>
+
+<!-- VISI & MISI (desain baru) -->
+<section id="visimisi" class="section">
+    <h2 class="section-title fade-in">Visi & Misi UMKM Jabutas</h2>
+    <div class="visi-misi-grid fade-in">
+        <div class="visi-card">
+            <h3><i class="fas fa-eye"></i> Visi</h3>
+            <p>Menjadikan Jabutas sebagai brand tas etnik modern yang mampu mengangkat nilai budaya Indonesia, khususnya kain Ulos, ke dalam gaya hidup generasi masa kini. Jabutas hadir bukan hanya sebagai produk fashion, tetapi juga sebagai simbol kebanggaan terhadap warisan budaya lokal yang dikemas secara modern, elegan, dan relevan dengan perkembangan tren.</p>
+        </div>
+        <div class="misi-card">
+            <h3><i class="fas fa-bullseye"></i> Misi</h3>
+            <ul>
+                <li>Menghadirkan desain tas berbahan Ulos yang modern, fungsional, dan mengikuti perkembangan tren fashion, sehingga dapat digunakan di berbagai aktivitas mulai dari kuliah, bekerja, hangout, hingga acara formal.</li>
+                <li>Membangun kerja sama berkelanjutan dengan para penenun Ulos lokal sebagai bentuk dukungan terhadap pelestarian budaya sekaligus peningkatan kesejahteraan pengrajin tradisional.</li>
+                <li>Mengangkat nilai dan filosofi di balik setiap motif Ulos melalui produk yang kami hadirkan, sehingga setiap tas tidak hanya memiliki nilai estetika, tetapi juga cerita dan makna budaya.</li>
+                <li>Mengutamakan kualitas bahan dan proses produksi yang detail untuk menciptakan produk yang tahan lama, nyaman digunakan, dan memiliki nilai pakai jangka panjang.</li>
+                <li>Membangun brand yang dekat dengan generasi muda serta menciptakan komunitas yang bangga menggunakan produk lokal sebagai bagian dari identitas dan gaya hidup modern.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="rating" class="section">
+    <h2 class="section-title fade-in">Apa Kata Mereka</h2>
+    <div class="testimonial-grid fade-in">
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Tasnya cantik! Ulos asli, jahitan rapi."</p><p class="testi-author">— Maya Siregar</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Packaging aman, cepat. Motif etnik tapi elegan."</p><p class="testi-author">— Dewi Lestari</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★½</div><p class="testi-text">"Bahan tebal berkualitas. Langganan oleh-oleh Medan."</p><p class="testi-author">— Rina Tambunan</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Suka banget sama detail tenunnya."</p><p class="testi-author">— Andi Sihombing</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Pelayanan ramah, pengiriman cepat."</p><p class="testi-author">— Lidya Manurung</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★☆</div><p class="testi-text">"Warna sesuai gambar, cocok untuk acara adat."</p><p class="testi-author">— Togar Nainggolan</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Tas ulos pertama saya, jatuh cinta!"</p><p class="testi-author">— Sarah Pardede</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Modelnya unik, nggak pasaran."</p><p class="testi-author">— Hendra Situmorang</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★½</div><p class="testi-text">"Bagus, hanya pengiriman agak lama."</p><p class="testi-author">— Melva Hutabarat</p></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Keren! Support UMKM lokal."</p><p class="testi-author">— Rico Simanjuntak</p></div>
+    </div>
+</section>
+
+<!-- SIAP MELAYANI + MAP -->
+<section id="layani" class="section">
+    <h2 class="section-title fade-in">Siap Melayani Anda</h2>
+    <div class="contact-form fade-in">
+        <form id="serviceForm">
+            <div class="form-group"><input type="text" id="fullName" placeholder="Nama Lengkap" required></div>
+            <div class="form-group"><input type="tel" id="waNumber" placeholder="Nomor WhatsApp" required></div>
+            <div class="form-group">
+                <select id="interestedTas">
+                    <option>Tas yang diminati (opsional)</option>
+                    <option>ALUNA</option><option>AYYA</option><option>ALORA</option><option>BIGGY</option><option>CLARISSA</option><option>CYLINDRIA</option><option>DARA</option><option>FOLDIE</option><option>GRIPA</option><option>GRIPA NEW</option><option>HIBY</option><option>KAYLA</option><option>LAYA</option><option>LAULI</option><option>LIFY</option><option>LILY</option><option>LOKA</option><option>LUCY</option><option>LULU</option><option>LUNA</option><option>NOAH</option><option>OVILIA</option><option>POUCH</option><option>RUCA</option><option>SHEILA</option><option>SOFIA</option><option>TARA</option><option>TERA</option><option>TIFFANY</option><option>TIARA</option><option>ZALEA</option><option>ZIA</option><option>CUSTOM</option>
+                </select>
+            </div>
+            <div class="form-group"><textarea id="message" rows="3" placeholder="Pesan / Pertanyaan"></textarea></div>
+            <button type="button" class="btn-submit" id="sendServiceWA"><i class="fab fa-whatsapp"></i> Kirim ke WhatsApp</button>
+        </form>
+    </div>
+    <div class="map-container fade-in">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.098819512021!2d98.6978558747322!3d3.56472249640946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312e635dbedb33%3A0x4c3c3d56a9e543b5!2sSabina%20Collection%20-%20Medan!5e0!3m2!1sid!2sid!4v1776177229133!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-caption"><i class="fas fa-map-pin"></i> UMKM Jabutas By Sabina Collection.</div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="kontak">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h3>Jabutas</h3>
+            <div class="footer-slogan">"Wastra Tak Terbatas."</div>
+            <div class="footer-slogan">"Tenun Tak Terbatas."</div>
+            <div class="footer-social">
+                <a href="https://wa.me/628127392635" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/sabina.collection?igsh=NzNya204MWFpbnFw" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@sabina.collection?_r=1&_t=ZS-95X8nxxV3EA" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Navigasi</h3>
+            <div class="footer-nav-vertical">
+                <a href="#home">Home</a>
+                <a href="#produk">Produk</a>
+                <a href="#tentang">Filosofi Ulos</a>
+                <a href="#toko">Tentang Toko</a>
+                <a href="#visimisi">Visi & Misi</a>
+                <a href="#rating">Testimoni</a>
+                <a href="#layani">Siap Melayani</a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Produk Kami</h3>
+            <div class="footer-products">
+                <span>ALUNA BAG</span>
+                <span>RUCA BAG</span>
+                <span>SHEILA BAG</span>
+                <span>CLARISSA BAG</span>
+                <span>LAYA BAG</span>
+                <span>DARA BAG</span>
+                
+            </div>
+        </div>
+    </div>
+    <div class="copyright">©️ 2025 Jabutas – Tas Ulos Handmade. All rights reserved.</div>
+</footer>
+
+<button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+<script src="script.js"></script>
+</body>
+</html>
